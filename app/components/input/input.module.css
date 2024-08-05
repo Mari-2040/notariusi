@@ -1,0 +1,64 @@
+.inputStyle {
+  border-radius: 10px;
+  outline: none;
+  width: 192px;
+  height: 40px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+  border: 0.66px solid #8a8a8a;
+  font-size: 0.75em;
+  color: #000;
+  background-color: white;
+}
+
+.inputStyle::placeholder {
+  color: #8a8a8a;
+}
+
+.spanStyle {
+  color: #303030;
+  font-size: 0.75em;
+  font-weight: normal; /* Normal font weight */
+  font-family: serif;
+  line-height: 20px;
+}
+
+.inputComponent_div {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.textArea_div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.textArea_span {
+  color: #303030;
+  font-size: 0.75em;
+  font-weight: normal;
+  font-family: serif;
+  line-height: 20px;
+}
+
+.textarea {
+  border-radius: 10px;
+  outline: none;
+  height: 68px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
+  border: 0.66px solid #8a8a8a;
+  font-size: 0.75em;
+  background-color: white;
+  color: #000;
+  resize: none;
+}
+
+.textarea::placeholder {
+  color: #8a8a8a;
+}

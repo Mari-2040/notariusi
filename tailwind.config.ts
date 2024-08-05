@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFeatureSettings: {
+        "clig-off": "'clig' off",
+        "liga-off": "'liga' off",
+        "clig-liga-off": "'clig' off, 'liga' off",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +20,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme }: any) {
+      const fontFeatureSettings = theme("fontFeatureSettings");
+      const utilities = Object.entries(fontFeatureSettings).map(
+        ([key, value]) => ({
+          [`.${key}`]: {
+            "font-feature-settings": value,
+          },
+        })
+      );
+
+      addUtilities(utilities, ["responsive", "hover"]);
+    },
+  ],
 };
 export default config;

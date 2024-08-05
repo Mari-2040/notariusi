@@ -1,0 +1,8 @@
+.add {
+  cursor: pointer;
+  color: white;
+  background-color: #303030;
+  padding: 2px 13px;
+  border-radius: 9px;
+  box-shadow: var(--tw-shadow-primary);
+}

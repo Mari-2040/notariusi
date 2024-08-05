@@ -1,0 +1,15 @@
+.datePiker_span {
+  color: #303030;
+  font-size: 0.75em;
+  font-weight: 500;
+  font-family: serif;
+  line-height: 20px;
+}
+
+.datePiker_select {
+  display: flex;
+  padding: 6px;
+  gap: 16px;
+  align-items: center;
+  outline: none;
+}
