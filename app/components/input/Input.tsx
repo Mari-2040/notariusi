@@ -4,6 +4,7 @@ import styles from "./input.module.css";
 
 type inputType = "text" | "number" | "date" | "password";
 interface InputComponentProps {
+  initialData?: string;
   type?: inputType;
   placeholder?: string;
   value?: string;
@@ -11,10 +12,11 @@ interface InputComponentProps {
   label?: string;
 }
 export default function Input(props: InputComponentProps) {
-  const [inputValue, setInputValue] = useState(props.value || "");
+  const [inputValue, setInputValue] = useState(props.initialData || "");
   const changeValue = (e: any) => {
     setInputValue(e.target.value);
     props.change && props.change(e);
+    console.table({ [e.target.name]: e.target.value });
   };
 
   return (

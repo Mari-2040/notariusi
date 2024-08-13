@@ -19,7 +19,7 @@ export default function DatePickerComponent(props: InputComponentProps) {
     { length: getYear(new Date()) - 1989 },
     (_, i) => 1990 + i
   );
-  const months = [  
+  const months = [
     "იანვარი",
     "თებერვალი",
     "მარტი",
@@ -40,6 +40,7 @@ export default function DatePickerComponent(props: InputComponentProps) {
       <DatePicker
         locale={ka}
         placeholderText={props.placeholder || "აირჩიეთ"}
+        toggleCalendarOnIconClick
         showIcon
         icon={
           <svg

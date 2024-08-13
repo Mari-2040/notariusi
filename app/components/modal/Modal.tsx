@@ -1,4 +1,3 @@
-"use client";
 import AddDocumentTitile from "../addDocumentTitile/AddDocumentTitile";
 import InputComponent from "../input/InputComponent";
 import AttachFile from "../addAndAttachFile/attachfile/AttachFile";
@@ -7,7 +6,6 @@ import styles from "./Modal.module.css";
 
 export default function Modal({ isOpen, onClose }: any) {
   return (
-    // blari ar damaviwydes
     <div className="">
       {isOpen && (
         <div className={styles.modulComponent}>
