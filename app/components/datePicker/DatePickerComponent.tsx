@@ -8,12 +8,14 @@ import { ka } from "date-fns/locale";
 interface InputComponentProps {
   placeholder?: string;
   label?: string;
+  change: (date: Date | null) => void;
 }
 
 export default function DatePickerComponent(props: InputComponentProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
+    props.change(date);
   };
   const years = Array.from(
     { length: getYear(new Date()) - 1989 },
@@ -40,23 +42,25 @@ export default function DatePickerComponent(props: InputComponentProps) {
       <DatePicker
         locale={ka}
         placeholderText={props.placeholder || "აირჩიეთ"}
-        toggleCalendarOnIconClick
         showIcon
+        toggleCalendarOnIconClick
         icon={
           <svg
-            className="items-center top-[5px] left-[80%]"
+            className="items-center top-[5px] left-[80%] cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 20 20"
-            fill="none">
+            fill="none"
+          >
             <mask
               id="mask0_1_2686"
               maskUnits="userSpaceOnUse"
               x="0"
               y="0"
               width="20"
-              height="20">
+              height="20"
+            >
               <rect width="20" height="20" fill="#D9D9D9" />
             </mask>
             <g mask="url(#mask0_1_2686)">
@@ -80,7 +84,8 @@ export default function DatePickerComponent(props: InputComponentProps) {
             <select
               className=" outline-none"
               value={getYear(date)}
-              onChange={({ target: { value } }) => changeYear(Number(value))}>
+              onChange={({ target: { value } }) => changeYear(Number(value))}
+            >
               {years.map((year) => (
                 <option key={year} value={year}>
                   {year}
@@ -92,7 +97,8 @@ export default function DatePickerComponent(props: InputComponentProps) {
               value={months[getMonth(date)]}
               onChange={({ target: { value } }) =>
                 changeMonth(months.indexOf(value))
-              }>
+              }
+            >
               {months.map((month) => (
                 <option key={month} value={month}>
                   {month}

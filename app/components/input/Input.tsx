@@ -16,7 +16,6 @@ export default function Input(props: InputComponentProps) {
   const changeValue = (e: any) => {
     setInputValue(e.target.value);
     props.change && props.change(e);
-    console.table({ [e.target.name]: e.target.value });
   };
 
   return (
