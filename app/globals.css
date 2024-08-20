@@ -28,6 +28,21 @@
   color: white !important;
 }
 
+.react-datepicker-popper {
+  left: -23px !important;
+  top: -10px !important;
+}
+/* .react-datepicker__month  {
+  padding: 16px !important;
+} */
+
+.react-datepicker__day {
+  width: 32px !important;
+}
+
+.react-datepicker__day-name {
+  width: 32px !important;
+}
 .openModal {
   margin-left: 24px;
   margin-top: 24px;

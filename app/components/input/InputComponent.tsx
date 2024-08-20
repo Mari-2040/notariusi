@@ -30,7 +30,7 @@ export default function InputComponent() {
         label="დოკუმენტის ნომერი"
       />
       <DatePickerComponent
-        change={(e: any) => handleTextareaChange(e.target.value)}
+        change={(date: any) => handleTextareaChange(date)}
         label="დოკუმენტის თარიღი"
       />
     </div>
