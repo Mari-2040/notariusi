@@ -1,11 +1,10 @@
 import React from "react";
 
-const Calendaricon = ({ handleClick }: any) => {
- 
+const Calendaricon = ({ onClick }: any) => {
   return (
-    <div onClick={handleClick}>
+    <div onClick={onClick}>
       <svg
-        className=" cursor-pointer absolute items-center top-3 left-[85%]"
+       
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
