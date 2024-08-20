@@ -3,8 +3,17 @@ import InputComponent from "../input/InputComponent";
 import AttachFile from "../addAndAttachFile/attachfile/AttachFile";
 import Textarea from "../input/Textarea";
 import styles from "./Modal.module.css";
+import { useSnapshot } from "valtio";
+import { store } from "../snap/snap";
+import { handleInputDataFiller } from "@/app/exshen/action";
 
 export default function Modal({ isOpen, onClose }: any) {
+  const snap = useSnapshot(store);
+  const handleTextareaChange = (value: string) => {
+    const newState = { description: value };
+    handleInputDataFiller(store, snap, newState);
+  };
+
   return (
     <div className="">
       {isOpen && (
@@ -13,7 +22,11 @@ export default function Modal({ isOpen, onClose }: any) {
             <AddDocumentTitile onClose={onClose} />
             <div className={styles.form_div}>
               <InputComponent />
-              <Textarea label="აღწერა" placeholder="ჩაწერეთ" />
+              <Textarea
+                change={(e) => handleTextareaChange(e.target.value)}
+                label="აღწერა"
+                placeholder="ჩაწერეთ"
+              />
             </div>
             <div>
               <AttachFile onClose={onClose} />
